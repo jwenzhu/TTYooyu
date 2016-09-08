@@ -2,6 +2,7 @@ package com.ttyooyu.market.ui.fragment;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Product;
@@ -21,6 +23,8 @@ import com.ttyooyu.market.ui.adapter.base.GridLayoutManagerWrapper;
 import com.ttyooyu.market.ui.fragment.base.BaseSwipeRefreshFragment;
 import com.ttyooyu.market.ui.view.IHomeView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 
@@ -30,6 +34,7 @@ import java.util.List;
  */
 public class HomeFragment extends BaseSwipeRefreshFragment<HomePresenter> implements IHomeView{
 
+    private float mTransparent = 0f;
 
     @Override
     protected void onRefreshStarted() {
@@ -53,10 +58,20 @@ public class HomeFragment extends BaseSwipeRefreshFragment<HomePresenter> implem
         mPresenter.getHomeData();
     }
 
-    RelativeLayout vTop;
+    ImageView vTopBg;
+    ImageView vMessage;
+    ImageView vScam;
+    TextView vAdvertisement;
     @Override
     protected void initView() {
-        vTop = (RelativeLayout) view.findViewById(R.id.layout_top);
+        vTopBg = (ImageView) view.findViewById(R.id.iv_bg);
+        vTopBg.setAlpha(mTransparent);
+        vMessage = (ImageView) view.findViewById(R.id.iv_message);
+        vMessage.setSelected(true);
+        vScam = (ImageView) view.findViewById(R.id.iv_scan);
+        vScam.setSelected(true);
+        vAdvertisement = (TextView) view.findViewById(R.id.iv_advertisement);
+        vAdvertisement.setText("来自中国的金鱼");
         initRecyclerView();
     }
 
@@ -74,9 +89,15 @@ public class HomeFragment extends BaseSwipeRefreshFragment<HomePresenter> implem
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 totalY += dy;
-                Drawable drawable = getResources().getDrawable(R.drawable.shape_rectangle_gray);
-                drawable.setAlpha(totalY/1000);
-                vTop.setBackgroundDrawable(drawable);
+                mTransparent = totalY/300f;
+                vTopBg.setAlpha(mTransparent);
+                if(mTransparent > 0.8f){
+                    vMessage.setSelected(false);
+                    vScam.setSelected(false);
+                }else{
+                    vMessage.setSelected(true);
+                    vScam.setSelected(true);
+                }
             }
         });
     }

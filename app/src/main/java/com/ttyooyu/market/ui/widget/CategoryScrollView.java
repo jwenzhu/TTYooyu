@@ -89,11 +89,11 @@ public class CategoryScrollView extends ScrollView {
         for (int i = 0; i < length; i++) {
             if(i!=id){
                 vTextViews[i].setBackgroundColor(getResources().getColor(R.color.colorWhite));
-                vTextViews[i].setTextColor(getResources().getColor(R.color.colorBlue));
+                vTextViews[i].setTextColor(getResources().getColor(R.color.colorGray));
             }
         }
         vTextViews[id].setBackgroundColor(getResources().getColor(R.color.colorGrayLight));
-        vTextViews[id].setTextColor(getResources().getColor(R.color.colorGray));
+        vTextViews[id].setTextColor(getResources().getColor(R.color.colorBlue));
     }
 
     /**

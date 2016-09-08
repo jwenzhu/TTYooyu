@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -19,9 +20,9 @@ import java.util.List;
 public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.Adapter<BaseViewHolder<T>> {
 
 
-    private ArrayList<T> mDataList = new ArrayList<>();
-    private View vHeaderView;//header view
-    private View vFooterView;//footer view
+    public ArrayList<T> mDataList = new ArrayList<>();
+    private List<View> mHeaderViewData = new ArrayList<>();
+    private List<View> mFooterViewData = new ArrayList<>();
     public static Context mContext;
 
     public RecyclerViewAdapter(Context context){
@@ -46,9 +47,9 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
 
     @Override
     public int getItemViewType(int position) {
-        if(vHeaderView != null && position == 0){
+        if(mHeaderViewData.size() > 0 && position < mHeaderViewData.size()){
             return EItemType.ITEM_HEADER.ordinal();
-        }else if(vFooterView != null && position == getItemCount()- 1){
+        }else if(mFooterViewData.size() > 0 && position >= getItemCount()- mFooterViewData.size()){
             return EItemType.ITEM_FOOTER.ordinal();
         }else{
             return EItemType.ITEM_NORMAL.ordinal();
@@ -66,10 +67,10 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
-        if(vHeaderView != null && viewType == EItemType.ITEM_HEADER.ordinal()) {
-            return new HeaderHolder(vHeaderView);
-        }else if(vFooterView != null && viewType == EItemType.ITEM_FOOTER.ordinal()){
-            return new FooterHolder(vFooterView);
+        if(mHeaderViewData.size() > 0 && viewType == EItemType.ITEM_HEADER.ordinal()) {
+            return new HeaderHolder(mHeaderViewData.get(0));
+        }else if(mFooterViewData.size() > 0 && viewType == EItemType.ITEM_FOOTER.ordinal()){
+            return new FooterHolder(mFooterViewData.get(0));
         }else{
             return onCreate(parent, viewType);
         }
@@ -108,19 +109,12 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
 
     @Override
     public int getItemCount() {
-        int size = mDataList.size();
-        if(vHeaderView != null){
-            size++;
-        }
-        if(vFooterView != null){
-            size++;
-        }
-        return size;
+        return mDataList.size()+ mHeaderViewData.size() + mFooterViewData.size();
     }
 
     public int getRealPosition(RecyclerView.ViewHolder holder) {
         int position = holder.getLayoutPosition();
-        return vHeaderView == null ? position : position - 1;
+        return mHeaderViewData.size() > 0 ? position - mHeaderViewData.size(): position;
     }
 
 
@@ -145,20 +139,12 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
     }
 
     public void setHeaderView(View headerView) {
-        this.vHeaderView = headerView;
+        mHeaderViewData.add(0,headerView);
         notifyItemInserted(0);
     }
 
-    public View getHeaderView() {
-        return vHeaderView;
-    }
-
-    public View getFooterView() {
-        return vFooterView;
-    }
-
-    public void setFooterView(View vFooterView) {
-        this.vFooterView = vFooterView;
+    public void setFooterView(View footerView) {
+        mFooterViewData.add(0,footerView);
         notifyItemInserted(getItemCount()-1);
     }
 

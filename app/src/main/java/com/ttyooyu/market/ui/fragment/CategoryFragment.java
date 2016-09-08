@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Category;
@@ -43,8 +44,11 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
         mPresenter.getProductData();
     }
 
+    TextView vAdvertisement;
     @Override
     protected void initView() {
+        vAdvertisement = (TextView) view.findViewById(R.id.iv_advertisement);
+        vAdvertisement.setText("来自中国的金鱼");
         initRecyclerView();
     }
 
@@ -64,6 +68,7 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
         vScrollView.setOnIClickListener(new CategoryScrollView.OnIClickListener() {
             @Override
             public void onIClickListener(int position) {
+                mPresenter.getProductData();
             }
         });
     }

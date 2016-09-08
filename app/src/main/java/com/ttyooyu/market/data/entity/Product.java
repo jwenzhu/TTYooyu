@@ -11,7 +11,14 @@ public class Product extends Soul{
         this.price = price;
     }
 
+    public Product(String name, String price, int isAdvertisement) {
+        this.name = name;
+        this.price = price;
+        this.isAdvertisement = isAdvertisement;
+    }
+
     public String name;
     public String price;
+    public int isAdvertisement;
 
 }

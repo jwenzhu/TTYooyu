@@ -1,6 +1,7 @@
 package com.ttyooyu.market.presenter;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.ttyooyu.market.data.entity.Category;
 import com.ttyooyu.market.data.entity.Product;
@@ -10,6 +11,7 @@ import com.ttyooyu.market.ui.view.IHomeView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Administrator on 2016-08-25.
@@ -32,7 +34,8 @@ public class CategoryPresenter extends BasePresenter<ICategoryView> {
     public void getProductData(){
         List<Product> products = new ArrayList<>();
         for(int i = 0;i < 20;i++){
-            Product product = new Product("秋刀鱼","18.8");
+            int random = new Random().nextInt(2);
+            Product product = new Product("秋刀鱼","18.8",random);
             products.add(product);
         }
         mView.fillProductData(products);

@@ -12,6 +12,7 @@ import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Category;
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.ui.adapter.base.BaseViewHolder;
+import com.ttyooyu.market.ui.adapter.base.EItemType;
 import com.ttyooyu.market.ui.adapter.base.GridLayoutManagerWrapper;
 import com.ttyooyu.market.ui.adapter.base.LinearLayoutManagerWrapper;
 import com.ttyooyu.market.ui.adapter.base.RecyclerViewAdapter;
@@ -32,10 +33,26 @@ public class CategoryAdapter extends RecyclerViewAdapter<Product> {
         super(context);
     }
 
+
+    @Override
+    public int getItemViewType(int position) {
+        if(mDataList.get(position).isAdvertisement == 0){
+            return EItemType.ITEM_ADVERTISEMENT.ordinal();
+        }else{
+            return  super.getItemViewType(position);
+        }
+    }
+
     @Override
     public BaseViewHolder onCreate(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_fragment_category,null);
-        return new ProductViewHolder(view);
+        View view;
+        if( viewType == EItemType.ITEM_ADVERTISEMENT.ordinal()){
+            view = LayoutInflater.from(mContext).inflate(R.layout.item_advertisement,null);
+            return new AdvertisementViewHolder(view);
+        }else{
+            view = LayoutInflater.from(mContext).inflate(R.layout.item_fragment_category,null);
+            return new ProductViewHolder(view);
+        }
     }
 
 
@@ -62,4 +79,17 @@ public class CategoryAdapter extends RecyclerViewAdapter<Product> {
 
         }
     }
+
+    class AdvertisementViewHolder extends BaseViewHolder<Product>{
+
+        public AdvertisementViewHolder(View itemView) {
+            super(itemView);
+        }
+
+        @Override
+        public void bindItem(Context context, Product product) {
+
+        }
+    }
+
 }

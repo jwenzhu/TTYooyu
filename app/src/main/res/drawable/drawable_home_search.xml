@@ -8,9 +8,12 @@
         android:top="2dp"
         android:right="2dp"
         android:bottom="2dp"/>
+    <stroke
+        android:width="0.5px"
+        android:color="@android:color/darker_gray" />
 
     <solid
-        android:color="@color/colorBlueTranslucence"/>
+        android:color="@color/colorWhite"/>
 
 
 </shape>
