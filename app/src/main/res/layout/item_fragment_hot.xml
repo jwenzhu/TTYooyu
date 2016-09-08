@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jwen="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ttyooyu.market.ui.widget.RoundImageView
+        android:id="@+id/iv_head"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="5dp"
+        android:src="@mipmap/icon_temp1"
+        jwen:type="circle"
+        />
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_head"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:text="@string/app_name"/>
+    <TextView
+        android:id="@+id/tv_community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_username"
+        android:padding="5dp"
+        android:text="来自中国的红顶金鱼，可爱的外表让他成为世界各地的宠儿"/>
+    <com.ttyooyu.market.ui.widget.MyGridView
+        android:id="@+id/mgv_hot"
+        android:layout_below="@id/tv_community"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:layout_marginBottom="50dp"/>
+</RelativeLayout>

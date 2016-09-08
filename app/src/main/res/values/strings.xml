@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">天天有鱼</string>
+    <string name="app_home_text">首页</string>
+    <string name="app_category_text">分类</string>
+    <string name="app_community_text">社区</string>
+    <string name="app_cart_text">购物车</string>
+    <string name="app_mine_text">我的</string>
+
+    <string name="app_home_time_limit">限时抢购</string>
+    <string name="app_home_good">精品推荐</string>
+    <string name="app_cart_total">合计：</string>
+    <string name="app_cart_select_all">全选</string>
+    <string name="app_cart_edit">编辑</string>
+    <string name="app_cart_balance">去结算(0)</string>
+
+    <string name="app_user_name">用户姓名</string>
+    <string name="app_user_integral">积分:000</string>
+    <string name="app_user_my_order">我的订单</string>
+    <string name="app_user_all_order">查看全部订单</string>
+    <string name="app_user_pay">待付款</string>
+    <string name="app_user_trans">待发货</string>
+    <string name="app_user_get">待收货</string>
+    <string name="app_user_comment">待评论</string>
+    <string name="app_user_refund">退款/售后</string>
+    <string name="app_user_tools">必备工具</string>
+    <string name="app_user_all_tools">查看所有工具</string>
+
+
+
+    <string name="app_temp_freshwater">淡水鱼</string>
+    <string name="app_temp_aquarium">观赏鱼</string>
+</resources>

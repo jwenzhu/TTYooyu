@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/layout_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_cart_top"
+        />
+    <include
+        android:id="@+id/layout_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/layout_cart_bottom"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_top"
+        android:layout_above="@id/layout_bottom"
+        android:scrollbars="none"
+        android:divider="@null"
+        android:listSelector="@color/colorTransparent">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
