@@ -10,7 +10,7 @@
         <include
             layout="@layout/layout_community_top"/>
     </RelativeLayout>
-    <com.astuetz.PagerSlidingTabStrip
+    <com.ttyooyu.market.ui.widget.PagerSlidingTabStrip
         android:id="@id/id_indicator"
         android:layout_width="match_parent"
         android:layout_height="50dp" />

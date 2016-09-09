@@ -7,13 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.astuetz.PagerSlidingTabStrip;
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.CommunityPresenter;
 import com.ttyooyu.market.ui.adapter.CommunityAdapter;
 import com.ttyooyu.market.ui.fragment.base.BaseFragment;
 import com.ttyooyu.market.ui.view.ICommunityView;
+import com.ttyooyu.market.ui.widget.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,14 +62,18 @@ public class CommunityFragment extends BaseFragment<CommunityPresenter> implemen
         mDataList.add(getString(R.string.app_temp_aquarium));
         mDataList.add(getString(R.string.app_temp_freshwater));
         mDataList.add(getString(R.string.app_temp_aquarium));
+        mDataList.add(getString(R.string.app_temp_aquarium));
+        mDataList.add(getString(R.string.app_temp_aquarium));
         Map<Integer,Fragment> mFragments= new HashMap<Integer,Fragment>();
         mFragments.put(0, new HotFragment());
         mFragments.put(1, new HotFragment());
         mFragments.put(2,  new HotFragment());
         mFragments.put(3, new HotFragment());
+        mFragments.put(4, new HotFragment());
+        mFragments.put(5, new HotFragment());
 
         ViewPager mViewPager = (ViewPager) view.findViewById(R.id.id_viewpager);
-        FragmentPagerAdapter mAdapter = new CommunityAdapter(getActivity().getSupportFragmentManager(),mFragments,mDataList);
+        CommunityAdapter mAdapter = new CommunityAdapter(getActivity().getSupportFragmentManager(),mFragments,mDataList);
         mViewPager.setAdapter(mAdapter);
         vTabs.setViewPager(mViewPager);
 

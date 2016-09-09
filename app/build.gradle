@@ -31,8 +31,5 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'io.reactivex:rxandroid:1.0.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    /**
-     * widget
-     */
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+
 }

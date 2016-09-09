@@ -21,8 +21,8 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
 
 
     public ArrayList<T> mDataList = new ArrayList<>();
-    private List<View> mHeaderViewData = new ArrayList<>();
-    private List<View> mFooterViewData = new ArrayList<>();
+    private List<View> mHeaderViewData = new ArrayList<>();//header view
+    private List<View> mFooterViewData = new ArrayList<>();//footer view
     public static Context mContext;
 
     public RecyclerViewAdapter(Context context){

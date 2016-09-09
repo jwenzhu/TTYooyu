@@ -12,7 +12,7 @@ import java.util.Map;
 public class CommunityAdapter extends FragmentPagerAdapter {
 
 	private Map<Integer,Fragment> vFragments= new HashMap<Integer,Fragment>();
-	private List<String> mDataList =new ArrayList<String>();
+	private List<String> mDataList =new ArrayList<>();
 
 	public CommunityAdapter(FragmentManager fm, Map<Integer,Fragment> fragments, List<String> data) {
 		super(fm);
@@ -34,4 +34,6 @@ public class CommunityAdapter extends FragmentPagerAdapter {
 	public CharSequence getPageTitle(int position) {
 		return mDataList.get(position);
 	}
+
+
 }
