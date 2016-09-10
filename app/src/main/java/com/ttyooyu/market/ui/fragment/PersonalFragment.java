@@ -11,7 +11,7 @@ import com.ttyooyu.market.presenter.PersonalPresenter;
 import com.ttyooyu.market.ui.adapter.ToolsAdapter;
 import com.ttyooyu.market.ui.fragment.base.BaseFragment;
 import com.ttyooyu.market.ui.view.IMineView;
-import com.ttyooyu.market.ui.widget.MyGridView;
+import com.ttyooyu.market.ui.widget.ExpandGridView;
 
 import java.util.List;
 
@@ -46,10 +46,10 @@ public class PersonalFragment extends BaseFragment<PersonalPresenter> implements
         initTools();
     }
 
-    MyGridView vToolsGridView;
+    ExpandGridView vToolsGridView;
     ToolsAdapter mAdapter;
     private void initTools() {
-        vToolsGridView = (MyGridView) view.findViewById(R.id.mgv_tools);
+        vToolsGridView = (ExpandGridView) view.findViewById(R.id.mgv_tools);
         mAdapter = new ToolsAdapter(getActivity());
         vToolsGridView.setAdapter(mAdapter);
     }

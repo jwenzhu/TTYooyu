@@ -20,7 +20,7 @@
         android:drawableRight="@mipmap/icon_arrow_right"
         android:layout_alignParentRight="true"
         android:text="@string/app_user_all_tools"/>
-    <com.ttyooyu.market.ui.widget.MyGridView
+    <com.ttyooyu.market.ui.widget.ExpandGridView
         android:id="@+id/mgv_tools"
         android:layout_below="@id/tv_examineOrder"
         android:layout_width="match_parent"

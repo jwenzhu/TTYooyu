@@ -29,7 +29,7 @@
         android:layout_below="@id/tv_username"
         android:padding="5dp"
         android:text="来自中国的红顶金鱼，可爱的外表让他成为世界各地的宠儿"/>
-    <com.ttyooyu.market.ui.widget.MyGridView
+    <com.ttyooyu.market.ui.widget.ExpandGridView
         android:id="@+id/mgv_hot"
         android:layout_below="@id/tv_community"
         android:layout_width="match_parent"

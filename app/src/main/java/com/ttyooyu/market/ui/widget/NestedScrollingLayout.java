@@ -16,7 +16,7 @@ import android.widget.OverScroller;
 import com.ttyooyu.market.R;
 
 
-public class CommunityLayout extends LinearLayout implements NestedScrollingParent
+public class NestedScrollingLayout extends LinearLayout implements NestedScrollingParent
 {
 
     @Override
@@ -87,7 +87,7 @@ public class CommunityLayout extends LinearLayout implements NestedScrollingPare
     private float mLastY;
     private boolean mDragging;
 
-    public CommunityLayout(Context context, AttributeSet attrs)
+    public NestedScrollingLayout(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         setOrientation(LinearLayout.VERTICAL);

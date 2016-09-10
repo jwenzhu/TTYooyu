@@ -13,7 +13,7 @@
         android:layout_below="@id/iv_product"
         android:padding="10dp"
         android:text="金鱼"/>
-    <com.ttyooyu.market.ui.widget.MyGridView
+    <com.ttyooyu.market.ui.widget.ExpandGridView
         android:id="@+id/mgv_category"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -15,7 +15,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -82,7 +81,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     private int lastScrollX = 0;
 
-    private int tabBackgroundResId = R.drawable.drawable_tab_background;
+    private int tabBackgroundResId = R.drawable.drawable_background_tab;
 
     private Locale locale;
 
@@ -181,7 +180,6 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         tabCount = pager.getAdapter().getCount();
 
         for (int i = 0; i < tabCount; i++) {
-
             if (pager.getAdapter() instanceof IconTabProvider) {
                 addIconTab(i, ((IconTabProvider) pager.getAdapter()).getPageIconResId(i));
             } else {
@@ -291,13 +289,12 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
         if (newScrollX != lastScrollX) {
             lastScrollX = newScrollX;
-            changerTextColor(position);
             scrollTo(newScrollX, 0);
         }
 
     }
 
-    private void changerTextColor(int position) {
+    private void changeTextColor(int position) {
         for(int i = 0;i < tabCount;i++){
             TextView textView = (TextView) tabsContainer.getChildAt(i);
             if(i == position){
@@ -361,6 +358,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
             currentPosition = position;
             currentPositionOffset = positionOffset;
+            changeTextColor(currentPosition);
 
             scrollToChild(position, (int) (positionOffset * tabsContainer.getChildAt(position).getWidth()));
 
@@ -384,6 +382,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
         @Override
         public void onPageSelected(int position) {
+
             if (delegatePageListener != null) {
                 delegatePageListener.onPageSelected(position);
             }
@@ -508,8 +507,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     public int getTextColor() {
         return tabTextColor;
     }
-    public void setCurrentTabTextColor(int resId) {
-        this.currentTabTextColor = getResources().getColor(resId);
+    public void setCurrentTabTextColor(int textColor) {
+        this.currentTabTextColor = textColor;
         updateTabStyles();
     }
 
