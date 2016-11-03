@@ -1,4 +1,4 @@
-package com.ttyooyu.market.ui.adapter.base;
+package com.ttyooyu.market.ui.widget.expandrecyclerview.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

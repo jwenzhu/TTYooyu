@@ -5,7 +5,6 @@ import android.app.Activity;
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.base.BasePresenter;
 import com.ttyooyu.market.ui.view.ICommunityView;
-import com.ttyooyu.market.ui.view.IHomeView;
 
 import java.util.ArrayList;
 import java.util.List;

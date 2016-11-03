@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Community;
 import com.ttyooyu.market.data.entity.Product;
-import com.ttyooyu.market.ui.adapter.base.BaseViewHolder;
-import com.ttyooyu.market.ui.adapter.base.RecyclerViewAdapter;
-import com.ttyooyu.market.ui.widget.MyGridView;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.base.BaseViewHolder;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.RecyclerViewAdapter;
+import com.ttyooyu.market.ui.widget.ExpandGridView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +34,12 @@ public class HotAdapter extends RecyclerViewAdapter<Community> {
 
     class HotViewHolder extends BaseViewHolder<Community>{
 
-        MyGridView vGridView;
+        ExpandGridView vGridView;
         HotProductAdapter mAdapter;
 
         public HotViewHolder(View itemView) {
             super(itemView);
-            vGridView = (MyGridView) itemView.findViewById(R.id.mgv_hot);
+            vGridView = (ExpandGridView) itemView.findViewById(R.id.mgv_hot);
             mAdapter = new HotProductAdapter(mContext);
             vGridView.setAdapter(mAdapter);
         }

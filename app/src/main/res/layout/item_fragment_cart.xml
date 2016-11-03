@@ -43,7 +43,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/drawable_reduce_press"/>
+            android:src="@drawable/selector_reduce_press"/>
         <TextView
             android:layout_width="40dp"
             android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/drawable_plus_press"/>
+            android:src="@drawable/selector_plus_press"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

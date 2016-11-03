@@ -2,11 +2,9 @@ package com.ttyooyu.market.presenter;
 
 import android.app.Activity;
 
-import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.data.entity.Tool;
 import com.ttyooyu.market.data.entity.User;
 import com.ttyooyu.market.presenter.base.BasePresenter;
-import com.ttyooyu.market.ui.view.IHomeView;
 import com.ttyooyu.market.ui.view.IMineView;
 
 import java.util.ArrayList;

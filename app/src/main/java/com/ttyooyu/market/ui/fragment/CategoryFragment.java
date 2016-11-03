@@ -1,6 +1,5 @@
 package com.ttyooyu.market.ui.fragment;
 
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +11,8 @@ import com.ttyooyu.market.data.entity.Category;
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.CategoryPresenter;
 import com.ttyooyu.market.ui.adapter.CategoryAdapter;
-import com.ttyooyu.market.ui.adapter.base.LinearLayoutManagerWrapper;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.manager.LinearLayoutManagerWrapper;
 import com.ttyooyu.market.ui.fragment.base.BaseFragment;
-import com.ttyooyu.market.ui.fragment.base.BaseSwipeRefreshFragment;
 import com.ttyooyu.market.ui.view.ICategoryView;
 import com.ttyooyu.market.ui.widget.CategoryScrollView;
 

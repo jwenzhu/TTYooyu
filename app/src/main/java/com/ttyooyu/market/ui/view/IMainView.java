@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016-08-25.
  */
-public interface IHomeView extends IBaseView{
+public interface IMainView extends IBaseView{
 
     /**
      * @param products

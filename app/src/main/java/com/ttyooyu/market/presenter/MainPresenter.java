@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.base.BasePresenter;
-import com.ttyooyu.market.ui.view.IHomeView;
+import com.ttyooyu.market.ui.view.IMainView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,9 @@ import java.util.List;
 /**
  * Created by Administrator on 2016-08-25.
  */
-public class HomePresenter extends BasePresenter<IHomeView> {
+public class MainPresenter extends BasePresenter<IMainView> {
 
-    public HomePresenter(Activity context, IHomeView view) {
+    public MainPresenter(Activity context, IMainView view) {
         super(context, view);
     }
 

@@ -4,16 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Product;
-import com.ttyooyu.market.ui.adapter.base.BaseViewHolder;
-import com.ttyooyu.market.ui.adapter.base.RecyclerViewAdapter;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.base.BaseViewHolder;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.RecyclerViewAdapter;
 
 /**
  * Created by Administrator on 2016-08-25.

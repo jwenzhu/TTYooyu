@@ -9,10 +9,8 @@ import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.CartPresenter;
 import com.ttyooyu.market.ui.adapter.CartAdapter;
-import com.ttyooyu.market.ui.adapter.HomeAdapter;
-import com.ttyooyu.market.ui.adapter.base.LinearLayoutManagerWrapper;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.manager.LinearLayoutManagerWrapper;
 import com.ttyooyu.market.ui.fragment.base.BaseFragment;
-import com.ttyooyu.market.ui.fragment.base.BaseSwipeRefreshFragment;
 import com.ttyooyu.market.ui.view.ICartView;
 
 import java.util.List;

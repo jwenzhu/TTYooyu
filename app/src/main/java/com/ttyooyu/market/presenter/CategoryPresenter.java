@@ -1,13 +1,11 @@
 package com.ttyooyu.market.presenter;
 
 import android.app.Activity;
-import android.util.Log;
 
 import com.ttyooyu.market.data.entity.Category;
 import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.base.BasePresenter;
 import com.ttyooyu.market.ui.view.ICategoryView;
-import com.ttyooyu.market.ui.view.IHomeView;
 
 import java.util.ArrayList;
 import java.util.List;

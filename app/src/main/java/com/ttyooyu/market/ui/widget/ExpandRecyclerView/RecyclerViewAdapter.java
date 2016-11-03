@@ -1,15 +1,17 @@
-package com.ttyooyu.market.ui.adapter.base;
+package com.ttyooyu.market.ui.widget.expandrecyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
 
 import com.ttyooyu.market.data.entity.Soul;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.base.BaseViewHolder;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.base.ItemType;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.listener.IClickItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +22,11 @@ import java.util.List;
 public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.Adapter<BaseViewHolder<T>> {
 
 
+
+
     public ArrayList<T> mDataList = new ArrayList<>();
-    private List<View> mHeaderViewData = new ArrayList<>();//header view
-    private List<View> mFooterViewData = new ArrayList<>();//footer view
+    private ArrayList<View> mHeaderViewData = new ArrayList<>();//header view
+    private ArrayList<View> mFooterViewData = new ArrayList<>();//footer view
     public static Context mContext;
 
     public RecyclerViewAdapter(Context context){
@@ -48,18 +52,18 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
     @Override
     public int getItemViewType(int position) {
         if(mHeaderViewData.size() > 0 && position < mHeaderViewData.size()){
-            return EItemType.ITEM_HEADER.ordinal();
+            return ItemType.ITEM_HEADER;
         }else if(mFooterViewData.size() > 0 && position >= getItemCount()- mFooterViewData.size()){
-            return EItemType.ITEM_FOOTER.ordinal();
+            return ItemType.ITEM_FOOTER;
         }else{
-            return EItemType.ITEM_NORMAL.ordinal();
+            return ItemType.ITEM_NORMAL;
         }
     }
 
     @Override
     public void onBindViewHolder(BaseViewHolder viewHolder, int position) {
-        if(getItemViewType(position) == EItemType.ITEM_HEADER.ordinal()
-                || getItemViewType(position) == EItemType.ITEM_FOOTER.ordinal()) return;
+        if(getItemViewType(position) == ItemType.ITEM_HEADER
+                || getItemViewType(position) == ItemType.ITEM_FOOTER) return;
         final int pos = getRealPosition(viewHolder);
         final T data = mDataList.get(pos);
         viewHolder.bindItem(mContext, data);
@@ -67,9 +71,9 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
-        if(mHeaderViewData.size() > 0 && viewType == EItemType.ITEM_HEADER.ordinal()) {
+        if(mHeaderViewData.size() > 0 && viewType == ItemType.ITEM_HEADER) {
             return new HeaderHolder(mHeaderViewData.get(0));
-        }else if(mFooterViewData.size() > 0 && viewType == EItemType.ITEM_FOOTER.ordinal()){
+        }else if(mFooterViewData.size() > 0 && viewType == ItemType.ITEM_FOOTER){
             return new FooterHolder(mFooterViewData.get(0));
         }else{
             return onCreate(parent, viewType);
@@ -85,8 +89,8 @@ public abstract class RecyclerViewAdapter<T extends Soul> extends RecyclerView.A
             gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(int position) {
-                    if(getItemViewType(position) == EItemType.ITEM_HEADER.ordinal()
-                            || getItemViewType(position) == EItemType.ITEM_FOOTER.ordinal()){
+                    if(getItemViewType(position) == ItemType.ITEM_HEADER
+                            || getItemViewType(position) == ItemType.ITEM_FOOTER){
                         return gridManager.getSpanCount();
                     }else{
                         return 1;

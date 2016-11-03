@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 
+import com.squareup.leakcanary.watcher.RefWatcher;
+import com.ttyooyu.market.MyApplication;
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.presenter.base.BasePresenter;
 
@@ -45,6 +47,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
+
+        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
+        refWatcher.watch(this);
+
         initPresenter();
         initView();
         requestData();

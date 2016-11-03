@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Community;
-import com.ttyooyu.market.data.entity.Product;
 import com.ttyooyu.market.presenter.HotPresenter;
-import com.ttyooyu.market.ui.adapter.HomeAdapter;
 import com.ttyooyu.market.ui.adapter.HotAdapter;
-import com.ttyooyu.market.ui.adapter.base.LinearLayoutManagerWrapper;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.manager.LinearLayoutManagerWrapper;
 import com.ttyooyu.market.ui.fragment.base.BaseFragment;
 import com.ttyooyu.market.ui.view.IHotView;
 

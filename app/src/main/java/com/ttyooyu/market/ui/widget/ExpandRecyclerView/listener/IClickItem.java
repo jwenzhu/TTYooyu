@@ -1,4 +1,4 @@
-package com.ttyooyu.market.ui.adapter.base;
+package com.ttyooyu.market.ui.widget.expandrecyclerview.listener;
 
 import android.view.View;
 

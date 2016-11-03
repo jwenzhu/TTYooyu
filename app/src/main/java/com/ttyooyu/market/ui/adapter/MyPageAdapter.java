@@ -46,9 +46,9 @@ public class MyPageAdapter<T extends View> extends PagerAdapter {
 			imageView.setLayoutParams(params);
 			vTips[i] = imageView;
 			if (i == 0) {
-				vTips[i].setBackgroundResource(R.drawable.drawable_indicator_focused);
+				vTips[i].setBackgroundResource(R.drawable.shape_indicator_focused);
 			} else {
-				vTips[i].setBackgroundResource(R.drawable.drawable_indicator_unfocused);
+				vTips[i].setBackgroundResource(R.drawable.shape_indicator_unfocused);
 			}
 			vViewGroup.addView(imageView);
 		}
@@ -98,9 +98,9 @@ public class MyPageAdapter<T extends View> extends PagerAdapter {
 	private void setImageBackground(int selectItems) {
 		for (int i = 0; i < vTips.length; i++) {
 			if (i == selectItems) {
-				vTips[i].setBackgroundResource(R.drawable.drawable_indicator_focused);
+				vTips[i].setBackgroundResource(R.drawable.shape_indicator_focused);
 			} else {
-				vTips[i].setBackgroundResource(R.drawable.drawable_indicator_unfocused);
+				vTips[i].setBackgroundResource(R.drawable.shape_indicator_unfocused);
 			}
 		}
 	}

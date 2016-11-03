@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.GridView;
 
-public class MyGridView extends GridView{
+public class ExpandGridView extends GridView{
 
-	public MyGridView(Context context, AttributeSet attrs) {
+	public ExpandGridView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 

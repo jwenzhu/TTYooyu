@@ -3,4 +3,11 @@
     <item name="id_topView" type="id"/>
     <item name="id_viewpager" type="id"/>
     <item name="id_indicator" type="id"/>
+
+    <item name="refresh_layout" type="id"/>
+
+    <item name="swipe_left" type="id"/>
+    <item name="swipe_right" type="id"/>
+
+
 </resources>

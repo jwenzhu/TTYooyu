@@ -1,29 +1,22 @@
 package com.ttyooyu.market.ui.fragment;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ttyooyu.market.R;
 import com.ttyooyu.market.data.entity.Product;
-import com.ttyooyu.market.presenter.HomePresenter;
-import com.ttyooyu.market.ui.adapter.HomeAdapter;
+import com.ttyooyu.market.presenter.MainPresenter;
+import com.ttyooyu.market.ui.adapter.MainAdapter;
 import com.ttyooyu.market.ui.adapter.MyPageAdapter;
-import com.ttyooyu.market.ui.adapter.base.GridLayoutManagerWrapper;
+import com.ttyooyu.market.ui.widget.expandrecyclerview.manager.GridLayoutManagerWrapper;
 import com.ttyooyu.market.ui.fragment.base.BaseSwipeRefreshFragment;
-import com.ttyooyu.market.ui.view.IHomeView;
-
-import org.w3c.dom.Text;
+import com.ttyooyu.market.ui.view.IMainView;
 
 import java.util.List;
 
@@ -32,7 +25,7 @@ import java.util.List;
  * author: Jwen
  * date:2016-08-31.
  */
-public class HomeFragment extends BaseSwipeRefreshFragment<HomePresenter> implements IHomeView{
+public class MainFragment extends BaseSwipeRefreshFragment<MainPresenter> implements IMainView {
 
     private float mTransparent = 0f;
 
@@ -44,13 +37,13 @@ public class HomeFragment extends BaseSwipeRefreshFragment<HomePresenter> implem
     View view;
     @Override
     protected View getLayout(LayoutInflater inflater, ViewGroup container) {
-        view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_main, container, false);
         return view;
     }
 
     @Override
     protected void initPresenter() {
-        mPresenter = new HomePresenter(getActivity(),this);
+        mPresenter = new MainPresenter(getActivity(),this);
     }
 
     @Override
@@ -76,11 +69,11 @@ public class HomeFragment extends BaseSwipeRefreshFragment<HomePresenter> implem
     }
 
     RecyclerView vRecyclerView;
-    HomeAdapter mAdapter;
+    MainAdapter mAdapter;
     private void initRecyclerView() {
         vRecyclerView = (RecyclerView) view.findViewById(R.id.rv_home);
         vRecyclerView.setLayoutManager(new GridLayoutManagerWrapper(getActivity(),2));
-        mAdapter = new HomeAdapter(getActivity());
+        mAdapter = new MainAdapter(getActivity());
         vRecyclerView.setAdapter(mAdapter);
         mAdapter.setHeaderView(initHeaderView());
         vRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
